@@ -1,0 +1,86 @@
+@import "main";
+
+//  Start Hero Section
+section#hero {
+  margin: 2rem;
+
+  .intro-left {
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h1, h2, h3, p {
+      position: relative;
+      z-index: 5;
+    }
+    .mobile-headshot {
+      margin: 0 auto;
+
+          img {
+            width: 100%;
+            margin: 1rem 0 3rem 0;
+            border: none;
+            outline: none;
+            border-radius: 20%;
+            position: relative;
+            z-index: 3;
+          }
+          &:before {
+            content: '';
+            background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #5c3d99 100%);
+            filter: blur(123px);
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            top: 25%;
+            left: 25%;
+            z-index: 2;
+          }
+    }
+    p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      line-height: 1.8rem;
+
+          span.underline {
+            border-bottom: 2px solid $light-purple;
+          }
+    }
+    p:first-of-type {
+      font-weight: 700;
+      margin-bottom: 2rem;
+
+          span.green {
+            color: $accent-color;
+            font-family: "fastpen", sans-serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1rem;
+            margin-left: 0.5rem;
+          }
+    }
+    button {
+      @include btn;
+
+      svg {
+        margin: 0 1rem;
+        display: none;
+      }
+    }
+    button:hover {
+      width: 100%;
+
+      svg {
+        display: block;
+      }
+    }
+  }
+}
