@@ -11,7 +11,7 @@ body {
   background-color: #212121;
 }
 body .container {
-  max-width: 1479px;
+  width: 100%;
   position: relative;
   margin: 0 auto;
 }

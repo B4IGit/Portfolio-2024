@@ -1,0 +1,24 @@
+@import "main";
+
+section#classes {
+  @include style-section;
+
+      .classes-div {
+        margin-top: 2rem;
+
+        h3 {
+          margin-bottom: 1rem;
+        }
+        h3:nth-child(4),
+        h3:nth-child(6),
+        h3:nth-child(8),{
+          margin-top: 2rem;
+        }
+        p {
+          line-height: 2rem;
+          margin-left: 1rem;
+          list-style-type: circle;
+        }
+      }
+
+}

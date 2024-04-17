@@ -2,16 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
   // border: 1px solid red;
 }
 
 //  Color Pallet
-$bg-color: #101010;
+$bg-color: #212121;
 $text-color: #eceaea;
 $dark-purple: #301466;
 $light-purple: #5c3d99;
 $accent-color: #80ed99;
-$sidebar: #212121;
+$black-color: #101010;
 
 //  Breakpoints
 $xs-breakpoint: 0px;
@@ -28,35 +29,51 @@ $xxl-breakpoint: 1400px;
 
 // Mixins
 @mixin btn {
-  width: 80%;
+  width: 200px;
   border: none;
   outline: none;
   border-radius: 4px;
-  margin: 2rem auto;
-  padding: .5rem 0;
-  font-size: 1.3rem;
+  padding: .8rem 0;
+  font-size: 1.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $text-color;
-  background-color: $dark-purple;
+  color: lighten($text-color, 50%);
+  background-color: $light-purple;
   font-weight: bold;
   cursor: pointer;
   transition: width 0.5s;
+
+}
+@mixin style-section {
+  margin: 8rem 2rem 2rem 2rem;
+      h2 {
+        text-align: center;
+        font-size: 2rem;
+      }
+      span {
+        color: $accent-color;
+      }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 //  START BODY
 body {
   font-family: "century-gothic", sans-serif;
   color: $text-color;
   background-color: #212121;
   position: relative;
+  z-index: -10;
 
   .container {
-    max-width: 1479px;
+    width: 100%;
+    max-width: 1500px;
     //background-color: #37504d;
     position: relative;
     margin: 0 auto;
+    overflow: hidden;
 
     li {
       list-style: none;
@@ -87,6 +104,7 @@ header {
 
   .navbar {
     width: 100%;
+    max-width: 1500px;
     height: 60px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -132,8 +150,8 @@ header {
     right: 2rem;
     top: 60px;
     width: 300px;
-    height: 35vh;
-    background-color: $sidebar;
+    height: 40vh;
+    background-color: $bg-color;
     backdrop-filter: blur(5px);
     border-radius: 0 0 10px 10px;
     overflow: hidden;
