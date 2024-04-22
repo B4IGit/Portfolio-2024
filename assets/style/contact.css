@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 20vh;
 }
 
 body {
@@ -22,6 +23,26 @@ body .container {
   position: relative;
   margin: 0 auto;
   overflow: hidden;
+}
+body .container .social-media-bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+body .container .social-media-bar img {
+  width: clamp(2rem, 3vw, 40px);
+  margin-bottom: 1rem;
+}
+body .container section#contact.right.error-message {
+  color: red;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 body .container li {
   list-style: none;
@@ -44,8 +65,10 @@ body .container .color-bar {
 }
 
 header {
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 900;
   /*  .login-btn:hover {
       color: $text-color;
       background-color: $red;
@@ -136,11 +159,29 @@ section#contact h2 {
 section#contact span {
   color: #80ed99;
 }
-section#contact .right h3 {
-  margin-bottom: 1rem;
+section#contact h2 {
+  margin-bottom: 2rem;
+}
+section#contact .left .contact-card {
+  max-width: 400px;
+  margin: 0 auto 2rem;
+  background-color: #5c3d99;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+section#contact .left .contact-card img {
+  width: 100%;
+  border-radius: 1rem;
+}
+section#contact .right form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 section#contact .right form input {
   width: 100%;
+  max-width: 470px;
   height: 3rem;
   margin-bottom: 1rem;
   padding-left: 0.5rem;
@@ -160,12 +201,16 @@ section#contact .right form input:focus {
   border: 2px solid #80ed99;
   background: rgba(30, 30, 30, 0.73);
 }
-section#contact .right form input:nth-child(8),
-section#contact .right form label:nth-child(8) {
+section#contact .right form #phoneNum {
   display: none;
+}
+section#contact .right form input:last-child {
+  background-color: #5c3d99;
+  font-weight: 600;
 }
 section#contact .right form textarea {
   width: 100%;
+  max-width: 470px;
   min-height: 150px;
   padding: 0.5rem 0 0 0.5rem;
   border: none;
@@ -201,6 +246,57 @@ section#contact .right form button {
   cursor: pointer;
   transition: width 0.5s;
   margin: 0 auto;
+}
+section#contact .right form button img {
+  margin: 0 1rem;
+  display: none;
+  fill: #80ed99;
+}
+section#contact .right form button:hover {
+  width: 300px;
+}
+section#contact .right form button:hover img {
+  display: block;
+}
+
+@media screen and (min-width: 576px) {
+  section#contact h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  section#contact .flex {
+    display: flex;
+    flex-direction: unset;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+  section#contact .flex .left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section#contact .flex .left .contact-card {
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    background-color: #5c3d99;
+    border-radius: 2rem;
+    padding: 1rem;
+  }
+  section#contact .flex .left .contact-card img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  section#contact .flex .right {
+    width: 60%;
+    margin-top: 0;
+  }
+  section#contact .flex .right form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
 }
 
 /*# sourceMappingURL=contact.css.map */

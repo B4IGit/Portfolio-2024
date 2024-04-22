@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 20vh;
 }
 
 body {
@@ -22,6 +23,26 @@ body .container {
   position: relative;
   margin: 0 auto;
   overflow: hidden;
+}
+body .container .social-media-bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+body .container .social-media-bar img {
+  width: clamp(2rem, 3vw, 40px);
+  margin-bottom: 1rem;
+}
+body .container section#contact.right.error-message {
+  color: red;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 body .container li {
   list-style: none;
@@ -44,8 +65,10 @@ body .container .color-bar {
 }
 
 header {
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 900;
   /*  .login-btn:hover {
       color: $text-color;
       background-color: $red;
@@ -128,18 +151,20 @@ header .dropdown-menu li {
 }
 section#hero {
   margin: 2rem;
+  padding-top: 5%;
 }
 section#hero .intro-left h1 {
-  font-size: clamp(3rem, 5vw, 64px);
-  margin-bottom: 0.5rem;
+  font-size: clamp(3rem, 6vw, 80px);
+  margin-bottom: 5%;
 }
 section#hero .intro-left h2 {
-  font-size: clamp(2rem, 3vw, 48px);
+  font-size: clamp(2rem, 4vw, 48px);
   font-weight: 500;
+  padding-bottom: 5rem;
 }
 section#hero .intro-left h3 {
-  font-size: clamp(1.5rem, 2.5vw, 32px);
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 40px);
+  margin-bottom: 10%;
   font-weight: 300;
 }
 section#hero .intro-left h1, section#hero .intro-left h2, section#hero .intro-left h3, section#hero .intro-left p {
@@ -147,6 +172,9 @@ section#hero .intro-left h1, section#hero .intro-left h2, section#hero .intro-le
   z-index: 5;
 }
 section#hero .intro-left .mobile-headshot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   max-width: 500px;
   background-clip: content-box;
@@ -165,7 +193,8 @@ section#hero .intro-left .mobile-headshot:before {
 }
 section#hero .intro-left .mobile-headshot img {
   width: 100%;
-  margin: 2rem 0 3rem 0;
+  max-width: 300px;
+  margin: 2rem auto 3rem;
   border: none;
   outline: none;
   border-radius: 20%;
@@ -209,7 +238,7 @@ section#hero .intro-right {
     display: flex;
   }
   section#hero .intro-left {
-    width: 40%;
+    width: 50%;
     margin-left: 2rem;
   }
   section#hero .intro-left .mobile-headshot {
@@ -223,7 +252,7 @@ section#hero .intro-right {
   }
   section#hero .intro-right {
     display: unset;
-    width: 60%;
+    width: 50%;
     height: 100%;
   }
   section#hero .intro-right .headshot {
@@ -231,7 +260,28 @@ section#hero .intro-right {
     justify-content: center;
     align-items: center;
   }
-  section#hero .intro-right .headshot img {
+}
+@media screen and (min-width: 576px) {
+  section#hero {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  section#hero .intro-left .mobile-headshot {
+    display: none;
+  }
+  section#hero .intro-left button {
+    position: absolute;
+    margin-top: 3rem;
+    bottom: 5%;
+    margin-left: unset;
+  }
+  section#hero .intro-right, section#hero .headshot {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  section#hero .intro-right img, section#hero .headshot img {
     width: 80%;
     border: none;
     outline: none;
@@ -239,15 +289,14 @@ section#hero .intro-right {
     margin-top: 5vh;
     z-index: 5;
   }
-  section#hero .intro-right .headshot:before {
+  section#hero .intro-right:before, section#hero .headshot:before {
     content: "";
     background: linear-gradient(160deg, rgba(188, 165, 255, 0) 0%, #5C3D99 100%);
     filter: blur(61.5px);
     position: absolute;
-    width: 80%;
-    height: 45%;
-    top: 250px;
-    transform: translateX(200px);
+    width: 100%;
+    height: 100%;
+    transform: translateX(50px);
     z-index: -5;
   }
 }

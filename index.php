@@ -1,10 +1,10 @@
 <?php
+$errorMsg = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
-// honey pot field
+    // honey pot field
     $honeypot = $_POST['phoneNum'];
-    if (!empty($honeypot)) {
+    if(!empty( $honeypot )) {
         echo 'Honeypot field was filled out. Request ignored.';
         return;
     }
@@ -14,21 +14,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    if (!empty($firstName) && !empty($lastName) && !empty($email) && !empty($message)) {
+    if(!empty($firstName) && !empty($lastName) && !empty($email) && !empty($message)) {
 
-        $to = "dev.dfledesma@gmail.com";
+        $to = "test@devinfledesma.com, dev.dfledesma@gmail.com";
         $subject = "Contact form submission from $firstName $lastName";
-        $body = "You have received a new message from your website contact form.\n\n" . "Here are the details:\n\nName: $firstName $lastName\n\nEmail: $email\n\nMessage:\n$message";
+        $body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $firstName $lastName\n\nEmail: $email\n\nMessage:\n$message";
         $headers = "From: noreply@yourdomain.com\n";
         $headers .= "Reply-To: $email";
 
-        if (mail($to, $subject, $body, $headers)) {
+        if(mail($to, $subject, $body, $headers)) {
             echo "<script>alert('Message sent successfully');</script>";
         } else {
             echo 'Failed to send message';
         }
     } else {
-        echo 'All fields are required';
+        $errorMsg = 'All fields are required';
     }
 }
 ?>
@@ -43,14 +43,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio 2024</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/media/LEDESMA_DEVIN_Monogram.png">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/hero.css">
     <link rel="stylesheet" href="assets/style/about.css">
     <link rel="stylesheet" href="assets/style/skills.css">
     <link rel="stylesheet" href="assets/style/classes.css">
     <link rel="stylesheet" href="assets/style/contact.css">
-    <script src="assets/js/script.js"></script>
     <script src="assets/js/createJSON.js"></script>
+    <script src="assets/js/script.js"></script>
 </head>
 <body onload="pageSetup()">
     <div class="container">
@@ -63,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="#about">About</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#classes">Classes</a></li>
-                <li><a href="#">Homework</a></li>
+                <li><a href="../index.html">Homework</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
     <!--        <a href="#" class="login-btn">Login</a>-->
@@ -76,11 +77,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li><a href="#about">About</a></li>
             <li><a href="#">Projects</a></li>
             <li><a href="#classes">Classes</a></li>
-            <li><a href="#">Homework</a></li>
+            <li><a href="../index.html">Homework</a></li>
             <li><a href="#contact">Contact</a></li>
     <!--        <li><a href="#" class="login-btn">Login</a></li>-->
         </div>
     </header>
+
+    <div class="social-media-bar">
+        <a href="https://github.com/B4IGit" target="_blank" id="gitHub"><img src="assets/media/github.png" alt="GitHub icon"></a>
+        <a href="https://www.linkedin.com/in/devin-ledesma-8b1077296/" target="_blank" id="linkedIn"><img src="assets/media/linkedin.png" alt="LinkedIn icon"></a>
+    </div>
 
     <section id="hero">
         <div class="intro-left">
@@ -122,10 +128,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <h3>Email: <a href="mailto:dev.dfledesma@gmail.com">dev.dfledesma@gmail.com</a></h3>
                 <h3>Location: Ankeny, Iowa - 50021</h3>
+
+                <a href="resume.html">
+                    <button class="mobile-hide" type="button">Resume <img src="assets/media/paperclip-regular-24.png" alt="chat icon">
+                    </button>
+                </a>
             </div>
         </div>
         <a href="resume.html">
-            <button type="button">Resume <img src="assets/media/paperclip-regular-24.png" alt="chat icon">
+            <button class="hide" type="button">Resume <img src="assets/media/paperclip-regular-24.png" alt="chat icon">
             </button>
         </a>
     </section>
@@ -148,40 +159,86 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </button>
     </section>
 
-    <section id="classes">
-        <h2>My <span>Classes</span></h2>
-        <div class="classes-div">
-            <template id="classes-template">
-                <h3></h3>
-                <p></p>
+    <section id="projects">
+        <div class="projectsDiv">
+            <template>
+                <div class="projects-card">
+                    <img src="" alt="">
+                    <h3></h3>
+                    <p></p>
+                </div>
             </template>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="left">
-            <div class="contact-card"></div>
+    <section id="classes">
+        <h2>My <span>Classes</span></h2>
+        <div class="classes-div">
+            <template id="classes-template">
+                <div class="wrap">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </template>
         </div>
-        <div class="right">
-            <h3>Get in <span>touch . . .</span></h3>
-            <form method="POST" action="index.php">
-                <label for="firstName"></label>
-                <input type="text" id="firstName" name="firstName" placeholder="First Name*" required>
+        <a href="../index.html" target="_blank"><button type="button">Homework <img src="assets/media/code-block-regular-24.png" width="26px" alt="code logo"></button></a>
+    </section>
 
-                <label for="lastName"></label>
-                <input type="text" id="lastName" name="lastName" placeholder="Last Name*" required>
+    <section id="contact">
+        <h2>Let's get <span>in touch</span></h2>
+        <div class="flex">
+            <div class="left">
+                <div class="contact-card">
+                    <img src="assets/media/young_me.jpg" alt="">
+                    <h4>Just in case it's time to donate my hair, we are the same person.</h4>
+                </div>
+            </div>
+            <div class="right">
 
-                <label for="email"></label>
-                <input type="email" id="email" name="email" placeholder="Email*" required>
+                <form method="POST" action="index.php" id="contactForm">
 
-                <label for="phoneNum"></label>
-                <input type="tel" id="phoneNum" name="phoneNum" placeholder="Phone*" required>
+                    <?php if ($errorMsg): ?>
+                        <style>
+                            #firstName::placeholder,
+                            #lastName::placeholder,
+                            #email::placeholder,
+                            #message::placeholder {
+                                color: red;
+                            }
+                        </style>
 
-                <label for="message"></label>
-                <textarea id="message" name="message" placeholder="Message*" required></textarea>
+                        <div style="color: red; text-align: center; margin-bottom: 1rem" class="error-message">
+                            <?php echo $errorMsg; ?>
+                        </div>
 
-                <button>Say Hello</button>
-            </form>
+                        <script type="text/javascript">
+                            // It will run 'pageSetup' function and then scroll to the error.
+                            window.onload = function(){
+                                pageSetup();
+                                location.hash = "#contactForm";
+                            };
+                        </script>
+                    <?php endif; ?>
+
+                    <label for="firstName"></label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name*">
+
+                    <label for="lastName"></label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name*">
+
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" placeholder="Email*">
+
+                    <label for="phoneNum"></label>
+                    <input type="tel" id="phoneNum" name="phoneNum" placeholder="Phone*">
+
+                    <label for="message"></label>
+                    <textarea id="message" name="message" placeholder="Message*"></textarea>
+
+
+                    <button type="submit">Say Hello <img src="assets/media/face-regular-24.png" width="26px" alt="face icon"></button>
+                </form>
+            </div>
         </div>
     </section>
 

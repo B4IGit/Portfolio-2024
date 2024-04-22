@@ -1,0 +1,17 @@
+@import 'main';
+
+section#projects {
+  @include style-section;
+
+    .projects-card {
+      width: 100%;
+      max-width: 378px;
+      background-color: $dark-purple;
+
+      img {
+        width: 330px;
+        height: 190px;
+        background-color: $text-color;
+      }
+    }
+}

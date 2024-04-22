@@ -20,7 +20,7 @@ section#skills {
   padding: 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   border-radius: 16px;
@@ -58,5 +58,11 @@ section#skills {
     .skills-card {
       width: 170px;
     }
+  }
+}
+
+@media screen and (min-width: $sm-breakpoint) {
+  section#skills button {
+    @include btn;
   }
 }
