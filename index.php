@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="#about">About</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#classes">Classes</a></li>
-                <li><a href="../index.html">Homework</a></li>
+                <li><a href="../index.html" target="_blank">Homework</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
     <!--        <a href="#" class="login-btn">Login</a>-->
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li><a href="#about">About</a></li>
             <li><a href="#">Projects</a></li>
             <li><a href="#classes">Classes</a></li>
-            <li><a href="../index.html">Homework</a></li>
+            <li><a href="../index.html" target="_blank">Homework</a></li>
             <li><a href="#contact">Contact</a></li>
     <!--        <li><a href="#" class="login-btn">Login</a></li>-->
         </div>
