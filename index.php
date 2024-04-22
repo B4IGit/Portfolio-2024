@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="social-media-bar">
         <a href="https://github.com/B4IGit" target="_blank" id="gitHub"><img src="assets/media/github.png" alt="GitHub icon"></a>
-        <a href="https://www.linkedin.com/in/devin-ledesma-8b1077296/" target="_blank" id="linkedIn"><img src="assets/media/linkedin.png" alt="LinkedIn icon"></a>
+        <a href="https://www.linkedin.com/in/devin-f-ledesma/" target="_blank" id="linkedIn"><img src="assets/media/linkedin.png" alt="LinkedIn icon"></a>
     </div>
 
     <section id="hero">
