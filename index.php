@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="assets/style/hero.css">
     <link rel="stylesheet" href="assets/style/about.css">
     <link rel="stylesheet" href="assets/style/skills.css">
+    <link rel="stylesheet" href="assets/style/projects.css">
     <link rel="stylesheet" href="assets/style/classes.css">
     <link rel="stylesheet" href="assets/style/contact.css">
     <script src="assets/js/createJSON.js"></script>
@@ -90,16 +91,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section id="hero">
         <div class="intro-left">
-            <h3>Welcome,</h3>
+            <h3>Hi,</h3>
             <h1>I'm <span style="color: #80ed99;">Devin</span></h1>
-            <h2>Inspiring UX UI & Web Developer</h2>
+            <h2>An Inspiring UI/UX <br>Web Developer</h2>
 
             <div class="mobile-headshot">
                 <img src="assets/media/devin_ledesma_2024.png" alt="a close up head shot of myself">
             </div>
 
             <a href="#contact">
-            <button type="button">Let's Talk <img src="assets/media/chat-solid-24.png" alt="chat icon">
+            <button type="button">Let's Chat <img src="assets/media/chat-solid-24.png" alt="chat icon">
                 </button>
             </a>
         </div>
@@ -122,12 +123,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="right">
 <!--                <p class="welcome-title">Welcome to <br> <span class="green">my portfolio!</span></p>-->
-                <p>I'm a student at Des Moines Area Community College, <span class="underline">studying Web Development.</span></p>
-                <p>I plan to continue learning by taking Udemy course online. I am also currently working on a <span class="underline">UX Design Certificate</span> through Google.</p>
-                <p>I also have experience with <span class="underline">Photoshop, Illustrator, InDesign, and Typography</span> as well.</p>
+                <p>I am currently a student at Des Moines Area Community College <span><em>studying Web Development</em></span>.</p>
+                <p>My plan after graduation is to continue taking courses online (which includes design certifications) and finding <span><em>full-time employment</em></span>.
+                <p>Developed a strong capability for leveraging <span><em>Adobe Creative Cloud Design Tools</em></span>.</p> <br>
 
-                <h3>Email: <a href="mailto:dev.dfledesma@gmail.com">dev.dfledesma@gmail.com</a></h3>
-                <h3>Location: Ankeny, Iowa - 50021</h3>
+                <p><strong>Email: <a class href="mailto:dev.dfledesma@gmail.com">dev.dfledesma@gmail.com</a></strong></p>
+                <p><strong>Location: Ankeny, IA 50021</strong></p>
 
                 <a href="resume.html">
                     <button class="mobile-hide" type="button">Resume <img src="assets/media/paperclip-regular-24.png" alt="chat icon">
@@ -160,11 +161,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
     <section id="projects">
-        <div class="projectsDiv">
-            <template>
+        <div class="projects-div">
+            <template id="projects-template">
                 <div class="projects-card">
-                    <img src="" alt="">
+                    <img src="assets/media/WOW_DESIGN.jpg" alt="">
                     <h3></h3>
+                    <h4></h4>
                     <p></p>
                 </div>
             </template>
@@ -189,8 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="flex">
             <div class="left">
                 <div class="contact-card">
-                    <img src="assets/media/young_me.jpg" alt="">
-                    <h4>Just in case it's time to donate my hair, we are the same person.</h4>
+                    <img src="assets/media/me.jpg" alt="">
                 </div>
             </div>
             <div class="right">
@@ -236,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <textarea id="message" name="message" placeholder="Message*"></textarea>
 
 
-                    <button type="submit">Say Hello <img src="assets/media/face-regular-24.png" width="26px" alt="face icon"></button>
+                    <button type="submit">Let's Chat <img src="assets/media/face-regular-24.png" width="26px" alt="face icon"></button>
                 </form>
             </div>
         </div>

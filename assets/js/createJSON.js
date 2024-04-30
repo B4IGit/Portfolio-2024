@@ -1,5 +1,6 @@
 const skill = (skillsImg, skillsText) => ({ skillsImg, skillsText });
 
+// Access to images
 const skillsImages = {
     html5: 'assets/media/icons8-html.svg',
     css3: 'assets/media/icons8-css.svg',
@@ -59,8 +60,30 @@ const semesterClasses = [
     }
 ];
 
+const project = (projectImg, projectTitle, projectSkills, projectDesc) => ({ projectImg, projectTitle, projectSkills, projectDesc });
+
+const projectImages = {
+    chocolate: 'assets/media/DELICES_AU_CHOCOLATE.jpg',
+    urban: 'assets/media/URBAN_GARDENS.jpg',
+    sweets: 'assets/media/SWEETS_BUFFET.jpg',
+    wow: 'assets/media/WOW_DESIGN.jpg',
+    florals: 'assets/media/TRENDY_FLORALS.jpg',
+    gpgp: 'assets/media/GPGP.jpg'
+};
+
+const myProjects = [
+    project(projectImages.chocolate, 'Delices Au Chocolat', ['HTML', 'CSS'], 'One of the first websites I created during my first semester at DMACC'),
+    project(projectImages.urban, 'Urban Gardens', ['HTML','CSS','ANIMATIONS'], 'Designed and implicated website for an imaginary landscaping company'),
+    project(projectImages.sweets, 'Sweets Buffet', ['WordPress','HTML','CSS','BootStrap'],'This project was designed in WordPress using a variety of plugins and more'),
+    project(projectImages.wow, 'WOW Design', ['WordPress','AdobeXD','HTML','CSS'],'This project was intended how we would design and format large amounts of information'),
+    project(projectImages.florals, 'Trendy Florals', ['PHP','MySQL','Figma','HTML','CSS','UX Design'],'Final Project for PHP, mySQL database allows for input, update, delete, login, and logoff functionalities'),
+    project(projectImages.gpgp, 'Great Plains Game Players', ['HTML','CSS','JavaScript','PHP','Figma','AI'],'Our class was given the opportunity to redesign and re-build their website for academic experience')
+];
+
 const jsonSkills = JSON.stringify(mySkills);
 const jsonClasses = JSON.stringify(semesterClasses);
+const jsonProjects = JSON.stringify(myProjects);
 
 localStorage.setItem('skills', jsonSkills);
 localStorage.setItem('semClasses', jsonClasses);
+localStorage.setItem('projects', jsonProjects);

@@ -1,9 +1,12 @@
 // Access stored Data from createJSON.js file - used to dynamically display content to the DOM using html <template></template>
-const retrieveSkills = localStorage.getItem('skills');
-const skillsObject = JSON.parse(retrieveSkills);
+    const retrieveSkills = localStorage.getItem('skills');
+    const skillsObject = JSON.parse(retrieveSkills);
 
 const retrieveClasses = localStorage.getItem('semClasses');
 const classesObject = JSON.parse(retrieveClasses);
+
+const retrieveProjects = localStorage.getItem('projects');
+const projectsObject = JSON.parse(retrieveProjects);
 
 function pageSetup() {
 
@@ -38,7 +41,28 @@ function pageSetup() {
         }
 
         document.querySelector('.classes-div').appendChild(cloneClassesCard);
+    });
 
+    // Dynamically populate each project - data resides in createJSON.js file
+    projectsObject.forEach(card => {
+        let projectsTemplateRow = document.querySelector('#projects-template');
+        let cloneProjectsCard = projectsTemplateRow.content.cloneNode(true);
+
+        cloneProjectsCard.querySelector('img').src = card.projectImg;
+        cloneProjectsCard.querySelector('h3').innerHTML = card.projectTitle;
+
+        for(let i = 0; i < card.projectSkills.length; i++) {
+            let newLine = document.createElement("li");
+            newLine.innerHTML = card.projectSkills[i];
+            cloneProjectsCard.querySelector("h4").append(newLine);
+        }
+        cloneProjectsCard.querySelector('p').innerHTML = card.projectDesc;
+
+        document.querySelector('.projects-div').appendChild(cloneProjectsCard);
+    });
+    projectsObject.forEach(card => {
+        console.log(card);
+        //... rest of your code
     });
 
     //
